@@ -1,0 +1,47 @@
+using UnityEngine;
+
+public class ItemPickup : MonoBehaviour
+{
+    public string itemName; // O nome do item
+    public int quantity = 1; // A quantidade que o jogador coletará deste item
+
+    // Quando o jogador interage com este objeto
+    public void Interact(PlayerController player)
+    {
+        // Cria um novo item
+        Item newItem = new Item(itemName, quantity);
+
+        // Adiciona o item ao inventário do jogador
+        player.AddItemToInventory(newItem);
+
+        // Destrua o objeto de item na cena
+        Destroy(gameObject);
+    }
+}
+
+public void Interact()
+{
+    // Crie um raycast para detectar objetos na frente do jogador
+    RaycastHit hit;
+    if (Physics.Raycast(transform.position, transform.forward, out hit, 1.0f))
+    {
+        // Se o objeto tiver um script ItemPickup, interaja com ele
+        ItemPickup itemPickup = hit.transform.GetComponent<ItemPickup>();
+        if (itemPickup != null)
+        {
+            itemPickup.Interact(this);
+        }
+    }
+}
+
+void Update()
+{
+    // O resto do seu código aqui...
+
+    // Interact with items
+    if (Input.GetKeyDown(KeyCode.E))
+    {
+        Interact();
+    }
+}
+

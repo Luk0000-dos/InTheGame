@@ -1,0 +1,42 @@
+...
+
+public float healthPotionValue = 50f; // O valor que o Health Potion recupera
+public float manaPotionValue = 50f; // O valor que o Mana Potion recupera
+public float staminaPotionValue = 50f; // O valor que o Stamina Potion recupera
+
+...
+
+void Update()
+{
+    // Detecta se as teclas foram pressionadas
+    if (Input.GetKeyDown(KeyCode.Alpha1))
+    {
+        UseHealthPotion();
+    }
+    else if (Input.GetKeyDown(KeyCode.Alpha2))
+    {
+        UseManaPotion();
+    }
+    else if (Input.GetKeyDown(KeyCode.Alpha3))
+    {
+        UseStaminaPotion();
+    }
+}
+
+void UseHealthPotion()
+{
+    // Aumenta o HP do jogador
+    HP = Mathf.Min(HP + healthPotionValue, 100f); // Não permite que o HP ultrapasse 100
+}
+
+void UseManaPotion()
+{
+    // Aumenta o MP do jogador
+    MP = Mathf.Min(MP + manaPotionValue, 100f); // Não permite que o MP ultrapasse 100
+}
+
+void UseStaminaPotion()
+{
+    // Aumenta a Stamina do jogador
+    STA = Mathf.Min(STA + staminaPotionValue, 100f); // Não permite que a Stamina ultrapasse 100
+}

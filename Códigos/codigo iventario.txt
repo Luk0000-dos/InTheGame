@@ -1,0 +1,43 @@
+using System.Collections.Generic;
+
+...
+
+// Criação de um dicionário para armazenar os itens do inventário
+public Dictionary<string, int> inventory = new Dictionary<string, int>() 
+{
+    {"HealthPotion", 0},
+    {"ManaPotion", 0},
+    {"StaminaPotion", 0}
+};
+
+...
+
+void UseHealthPotion()
+{
+    // Verifica se o jogador tem uma poção de saúde no inventário antes de usar
+    if (inventory["HealthPotion"] > 0)
+    {
+        HP = Mathf.Min(HP + healthPotionValue, 100f); // Não permite que o HP ultrapasse 100
+        inventory["HealthPotion"]--; // Reduz a quantidade de poções de saúde no inventário
+    }
+}
+
+void UseManaPotion()
+{
+    // Verifica se o jogador tem uma poção de mana no inventário antes de usar
+    if (inventory["ManaPotion"] > 0)
+    {
+        MP = Mathf.Min(MP + manaPotionValue, 100f); // Não permite que o MP ultrapasse 100
+        inventory["ManaPotion"]--; // Reduz a quantidade de poções de mana no inventário
+    }
+}
+
+void UseStaminaPotion()
+{
+    // Verifica se o jogador tem uma poção de stamina no inventário antes de usar
+    if (inventory["StaminaPotion"] > 0)
+    {
+        STA = Mathf.Min(STA + staminaPotionValue, 100f); // Não permite que a Stamina ultrapasse 100
+        inventory["StaminaPotion"]--; // Reduz a quantidade de poções de stamina no inventário
+    }
+}

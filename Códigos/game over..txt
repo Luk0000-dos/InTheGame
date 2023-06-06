@@ -1,0 +1,14 @@
+public class GameOverScreen : MonoBehaviour
+{
+    public void ReloadGame()
+    {
+        // Recarrega o jogo, substitua "SceneName" pelo nome da cena do jogo
+        SceneManager.LoadScene("SceneName");
+    }
+
+    public void ExitGame()
+    {
+        // Fecha o jogo
+        Application.Quit();
+    }
+}
