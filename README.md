@@ -29,6 +29,3 @@
 # Explore!
 ![mapa](https://github.com/Luk0000-dos/InTheGame/assets/135077197/4a720410-4407-4b5c-a29b-135b05ad7a7c)
 
-# Downloads
-
-<h2><a href="https://drive.google.com/drive/folders/1GE8Bu8USzNnvAfqfAmejHL4CrtU1pIlV?usp=sharing"> In The Game</a></h2>
